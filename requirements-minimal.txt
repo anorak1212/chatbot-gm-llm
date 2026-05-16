@@ -1,0 +1,5 @@
+# Minimal requirements — same as requirements.txt
+# This project no longer has heavy GPU dependencies.
+# Install with: pip install -r requirements-minimal.txt
+
+-r requirements.txt

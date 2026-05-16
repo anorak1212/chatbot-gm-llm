@@ -1,0 +1,38 @@
+services:
+  neo4j:
+    image: neo4j:5.23.0
+    container_name: chatbot-gm-neo4j
+    ports:
+      - "7687:7687"      # Bolt protocol
+      - "7474:7474"      # HTTP (Browser at http://localhost:7474)
+      - "7473:7473"      # HTTPS
+    environment:
+      NEO4J_AUTH: neo4j/admin1234
+      NEO4J_ACCEPT_LICENSE_AGREEMENT: "yes"
+      NEO4J_PLUGINS: '["apoc"]'
+      NEO4J_dbms_memory_heap_max__size: 2g
+      NEO4J_dbms_memory_pagecache_size: 1g
+    volumes:
+      - neo4j_data:/var/lib/neo4j/data
+      - neo4j_logs:/var/lib/neo4j/logs
+      - neo4j_import:/var/lib/neo4j/import
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7474"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - chatbot-network
+
+networks:
+  chatbot-network:
+    driver: bridge
+
+volumes:
+  neo4j_data:
+    driver: local
+  neo4j_logs:
+    driver: local
+  neo4j_import:
+    driver: local

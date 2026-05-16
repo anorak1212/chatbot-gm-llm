@@ -1,0 +1,167 @@
+{
+  "metadata": {
+    "source": "26A Best Practices_Modified.docx",
+    "format": "Neo4j Cypher-compatible relationships",
+    "total_relationships": 12,
+    "note": "Ready for import to Neo4j GraphRAG"
+  },
+  "relationships": [
+    {
+      "id": "R01",
+      "source": "Panel de Puerta",
+      "source_type": "Componente",
+      "relationship": "TIENE_INTERFAZ_CON",
+      "target": "Asientos",
+      "target_type": "Componente",
+      "bp_reference": "BP1",
+      "description": "El Panel de Puerta debe mantener espacio libre requerido con los Asientos",
+      "cypher_format": "(Panel de Puerta)-[:TIENE_INTERFAZ_CON]->(Asientos)"
+    },
+    {
+      "id": "R02",
+      "source": "Trim Foot",
+      "source_type": "Sub-componente",
+      "relationship": "DEFINE_TRANSICION_CON",
+      "target": "N-Plane",
+      "target_type": "Componente",
+      "bp_reference": "BP2",
+      "description": "El Trim Foot define la transición con el interior de la puerta (N-Plane)",
+      "cypher_format": "(Trim Foot)-[:DEFINE_TRANSICION_CON]->(N-Plane)"
+    },
+    {
+      "id": "R03",
+      "source": "Trim Foot",
+      "source_type": "Sub-componente",
+      "relationship": "INTERFAZ_CON",
+      "target": "Window Garnish Trim",
+      "target_type": "Sub-componente",
+      "bp_reference": "BP2",
+      "description": "El Trim Foot se interfaza con el adorno de ventana",
+      "cypher_format": "(Trim Foot)-[:INTERFAZ_CON]->(Window Garnish Trim)"
+    },
+    {
+      "id": "R04",
+      "source": "Tirador de Puerta",
+      "source_type": "Componente",
+      "relationship": "SE_ANCLA_A",
+      "target": "Chapa Metálica",
+      "target_type": "Componente",
+      "bp_reference": "BP3",
+      "description": "El Tirador se ancla a la Chapa Metálica con ≥2 fijaciones M4.2",
+      "constraints": {
+        "fasteners": "≥2 × M4.2",
+        "torque": "5 ± 0.5 Nm",
+        "spacing": "20-30 mm"
+      },
+      "cypher_format": "(Tirador de Puerta)-[:SE_ANCLA_A {fasteners: 2, torque: '5±0.5 Nm'}]->(Chapa Metálica)"
+    },
+    {
+      "id": "R05",
+      "source": "Taza de Puerta",
+      "source_type": "Componente",
+      "relationship": "SE_ANCLA_A",
+      "target": "Chapa Metálica",
+      "target_type": "Componente",
+      "bp_reference": "BP4",
+      "description": "La Taza se ancla a la Chapa Metálica con 1 fijación M4.2",
+      "constraints": {
+        "fasteners": "1 × M4.2",
+        "torque": "5 ± 0.5 Nm"
+      },
+      "cypher_format": "(Taza de Puerta)-[:SE_ANCLA_A {fasteners: 1, torque: '5±0.5 Nm'}]->(Chapa Metálica)"
+    },
+    {
+      "id": "R06",
+      "source": "Tirador de Puerta",
+      "source_type": "Componente",
+      "relationship": "MUTUALLY_EXCLUSIVE_WITH",
+      "target": "Taza de Puerta",
+      "target_type": "Componente",
+      "bp_reference": ["BP3", "BP4"],
+      "description": "Un programa utiliza O tirador O taza, no ambos",
+      "cypher_format": "(Tirador de Puerta)-[:MUTUALLY_EXCLUSIVE_WITH]->(Taza de Puerta)"
+    },
+    {
+      "id": "R07",
+      "source": "Cinturón de Seguridad",
+      "source_type": "Componente",
+      "relationship": "DEBE_MANTENER_CLEARANCE_CON",
+      "target": "Panel de Puerta",
+      "target_type": "Componente",
+      "bp_reference": "BP5",
+      "description": "El Cinturón debe mantener ≥30mm de clearance con el Panel",
+      "constraints": {
+        "clearance_min": "30mm",
+        "applies_to_all_seat_positions": true
+      },
+      "cypher_format": "(Cinturón de Seguridad)-[:DEBE_MANTENER_CLEARANCE_CON {clearance: '≥30mm'}]->(Panel de Puerta)"
+    },
+    {
+      "id": "R08",
+      "source": "Panel de Puerta",
+      "source_type": "Componente",
+      "relationship": "REQUIERE_SPECIAL_ATTENTION_PARA",
+      "target": "Coupe",
+      "target_type": "Segmento",
+      "bp_reference": "BP5",
+      "description": "El Panel de Puerta en Coupes requiere atención especial para cinturón",
+      "cypher_format": "(Panel de Puerta)-[:REQUIERE_SPECIAL_ATTENTION_PARA]->(Coupe)"
+    },
+    {
+      "id": "R09",
+      "source": "Panel de Puerta",
+      "source_type": "Componente",
+      "relationship": "REQUIERE_SPECIAL_ATTENTION_PARA",
+      "target": "Convertible",
+      "target_type": "Segmento",
+      "bp_reference": "BP5",
+      "description": "El Panel de Puerta en Convertibles requiere atención especial para cinturón",
+      "cypher_format": "(Panel de Puerta)-[:REQUIERE_SPECIAL_ATTENTION_PARA]->(Convertible)"
+    },
+    {
+      "id": "R10",
+      "source": "Etiqueta",
+      "source_type": "Sub-componente",
+      "relationship": "DEBE_ESTAR_LOCALIZADA_EN",
+      "target": "Área Plana del Panel de Puerta",
+      "target_type": "Ubicación",
+      "bp_reference": "BP6",
+      "description": "La Etiqueta debe estar en un área plana para adhesión correcta",
+      "constraints": {
+        "scribe_line": "0.5mm",
+        "typical_size": "20mm × 50mm"
+      },
+      "cypher_format": "(Etiqueta)-[:DEBE_ESTAR_LOCALIZADA_EN {scribe_line: '0.5mm'}]->(Área Plana Panel)"
+    },
+    {
+      "id": "R11",
+      "source": "Cinta Protectora",
+      "source_type": "Material",
+      "relationship": "PROTEGE_DURANTE",
+      "target": "Transporte en Rack",
+      "target_type": "Proceso Logístico",
+      "bp_reference": "BP7",
+      "description": "Cinta protectora con dimensiones específicas para transporte en rack",
+      "constraints": {
+        "dimensions": "10mm × 10mm",
+        "teamcenter_ref": "BDY23000"
+      },
+      "cypher_format": "(Cinta Protectora)-[:PROTEGE_DURANTE {dimensions: '10×10mm'}]->(Transporte Rack)"
+    },
+    {
+      "id": "R12",
+      "source": "Cinta Protectora",
+      "source_type": "Material",
+      "relationship": "PROTEGE_DURANTE",
+      "target": "Exportación de Vehículos",
+      "target_type": "Proceso Logístico",
+      "bp_reference": "BP7",
+      "description": "Cinta protectora con dimensiones específicas para exportación",
+      "constraints": {
+        "lower_zone": "8mm × 10mm",
+        "upper_and_armrest": "30mm × 10mm"
+      },
+      "cypher_format": "(Cinta Protectora)-[:PROTEGE_DURANTE]->(Exportación Vehículos)"
+    }
+  ]
+}

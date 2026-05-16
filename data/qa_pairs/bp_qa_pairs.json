@@ -1,0 +1,131 @@
+{
+  "metadata": {
+    "source": "26A Best Practices_Modified.docx",
+    "total_qa_pairs": 15,
+    "language": "Spanish",
+    "use_case": "Training data for RAG fine-tuning and retrieval validation",
+    "date": "2025-05-25"
+  },
+  "qa_pairs": [
+    {
+      "id": "Q001",
+      "question": "¿Cuál es el requisito mínimo de espacio libre entre los compartimentos del panel de puerta (map pockets) y los asientos?",
+      "answer": "El requisito mínimo es 50mm si el interruptor está en el asiento, o 20mm si el interruptor está en otra parte del vehículo.",
+      "bp_reference": "BP1",
+      "category": "Requisitos Dimensionales",
+      "difficulty": "Básico"
+    },
+    {
+      "id": "Q002",
+      "question": "¿Qué consecuencia tiene no cumplir con los requisitos de clearance del map pocket?",
+      "answer": "Resulta en mala calidad percibida por dificultad de acceso a controles o ítems almacenados.",
+      "bp_reference": "BP1",
+      "category": "Impacto de Requisitos",
+      "difficulty": "Básico"
+    },
+    {
+      "id": "Q003",
+      "question": "¿Qué criterios dimensionales se aplican a la interfaz entre el 'Trim Foot' y el interior de la puerta?",
+      "answer": "La Zona 1 es 0mm, la zona de transición es 1.5mm, y la Zona 2 es 3mm.",
+      "bp_reference": "BP2",
+      "category": "Requisitos Dimensionales",
+      "difficulty": "Básico"
+    },
+    {
+      "id": "Q004",
+      "question": "¿Cuáles son las consecuencias de un Trim Foot mal diseñado?",
+      "answer": "Pueden incluir problemas de calidad percibida, problemas de garantía, y ajustes pobres al metal y sellado.",
+      "bp_reference": "BP2",
+      "category": "Impacto de Requisitos",
+      "difficulty": "Medio"
+    },
+    {
+      "id": "Q005",
+      "question": "Si un programa utiliza un tirador de puerta, ¿cuántos sujetadores M4.2 debe tener para fijar el panel a la chapa metálica?",
+      "answer": "Debe tener un mínimo de dos sujetadores M4.2. El torque requerido es 5 ± 0.5 Nm y la distancia entre ellos debe ser entre 20mm y 30mm.",
+      "bp_reference": "BP3",
+      "category": "Requisitos Mecánicos",
+      "difficulty": "Medio"
+    },
+    {
+      "id": "Q006",
+      "question": "¿Cuál es la diferencia en los requisitos de fijación entre un tirador de puerta (pull handle) y una taza de puerta (pull cup)?",
+      "answer": "El tirador requiere ≥2 sujetadores M4.2, mientras que la taza requiere solo 1 sujetador M4.2. Ambos tienen un torque requerido de 5 ± 0.5 Nm. Además, son mutuamente excluyentes en un programa.",
+      "bp_reference": ["BP3", "BP4"],
+      "category": "Requisitos Mecánicos",
+      "difficulty": "Alto"
+    },
+    {
+      "id": "Q007",
+      "question": "¿Cuál es el requisito de claro mínimo entre la hebilla del cinturón de seguridad y el panel de puerta?",
+      "answer": "El mínimo es de 30mm para todos los viajes y posiciones del asiento, independientemente de si la hebilla está en el asiento o en el cuerpo.",
+      "bp_reference": "BP5",
+      "category": "Requisitos de Seguridad",
+      "difficulty": "Básico"
+    },
+    {
+      "id": "Q008",
+      "question": "¿Por qué es crítico el requisito de clearance del cinturón de seguridad?",
+      "answer": "Porque si el cinturón puede dañar el revestimiento interior del panel de puerta, afectando tanto la funcionalidad como la apariencia del vehículo.",
+      "bp_reference": "BP5",
+      "category": "Impacto de Requisitos",
+      "difficulty": "Medio"
+    },
+    {
+      "id": "Q009",
+      "question": "¿Hay consideraciones especiales para segmentos de vehículos específicos respecto al cinturón de seguridad?",
+      "answer": "Sí, se requiere detalle especial y atención adicional para Coupes y Convertibles debido a su configuración particular de asientos y cinturones.",
+      "bp_reference": "BP5",
+      "category": "Consideraciones Especiales",
+      "difficulty": "Medio"
+    },
+    {
+      "id": "Q010",
+      "question": "¿Dónde debe localizarse la etiqueta en el panel de puerta y por qué?",
+      "answer": "La etiqueta debe estar en un área lo suficientemente plana para adherirse correctamente. Se recomienda una línea de grabado (scribe line) de 0.5mm como guía, y el tamaño típico es 20mm × 50mm. Esto es importante porque la operación de escaneo de etiquetas en la planta GM no es aceptable sin estas características.",
+      "bp_reference": "BP6",
+      "category": "Requisitos de Identificación",
+      "difficulty": "Medio"
+    },
+    {
+      "id": "Q011",
+      "question": "¿Cuáles son las dimensiones especificadas para la cinta protectora durante el transporte en rack?",
+      "answer": "Para el transporte en rack, el tamaño requerido es 10mm × 10mm (referencia Teamcenter: BDY23000). Debe cubrir esquinas expuestas al rack sin impedir la instalación del panel.",
+      "bp_reference": "BP7",
+      "category": "Requisitos de Logística",
+      "difficulty": "Básico"
+    },
+    {
+      "id": "Q012",
+      "question": "¿Hay diferencias en los requisitos de cinta protectora entre el transporte en rack y la exportación?",
+      "answer": "Sí. Para el transporte en rack: 10mm × 10mm en todas las zonas. Para exportación de vehículos: Zona Baja 8mm × 10mm; Zona Superior y Reposabrazos 30mm × 10mm.",
+      "bp_reference": "BP7",
+      "category": "Requisitos de Logística",
+      "difficulty": "Medio"
+    },
+    {
+      "id": "Q013",
+      "question": "¿Cuál es el propósito principal de la cinta protectora?",
+      "answer": "Mitigar daños estéticos durante el manejo y transporte, como pelado de pintura y arañazos en el panel de puerta.",
+      "bp_reference": "BP7",
+      "category": "Impacto de Requisitos",
+      "difficulty": "Básico"
+    },
+    {
+      "id": "Q014",
+      "question": "¿Cómo se aplican estas Best Practices a la compatibilidad global de la fabricación?",
+      "answer": "Estos requisitos garantizan que las soluciones de fabricación sean compatibles y consistentes entre las plantas de ensamblaje global de General Motors, evitando problemas de integración y variaciones en la calidad.",
+      "bp_reference": ["BP3", "BP4"],
+      "category": "Contexto General",
+      "difficulty": "Alto"
+    },
+    {
+      "id": "Q015",
+      "question": "¿Qué información de referencia es importante para la cinta protectora en el sistema Teamcenter?",
+      "answer": "La referencia Teamcenter BDY23000 es la designación estándar para la cinta protectora de 10mm × 10mm utilizada en el transporte en rack.",
+      "bp_reference": "BP7",
+      "category": "Referencias Técnicas",
+      "difficulty": "Básico"
+    }
+  ]
+}

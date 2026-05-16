@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "source": "26A Best Practices_Modified.docx",
+    "topic": "Best Practices - Interior Trim Design (GM/UEAMex)",
+    "sensitivity": "Confidential (GM - NDA Required)",
+    "version": "1.0",
+    "date": "2025-05-25",
+    "total_chunks": 7
+  },
+  "chunks": [
+    {
+      "id": "C01",
+      "title": "BP 1: Clearance Map Pocket a Asiento",
+      "content": "Define el espacio mínimo requerido entre los compartimentos de almacenamiento primarios del panel de puerta (map pockets) y los asientos. Mínimo 50mm si el interruptor está en el asiento; 20mm si el interruptor está en otra parte del vehículo.",
+      "keywords": ["clearance", "map pocket", "asiento", "calidad percibida", "interfaz"],
+      "category": "Requisitos Dimensionales (Asientos)",
+      "priority": "Alta",
+      "consequence": "Mala calidad percibida por dificultad de acceso a controles o ítems almacenados",
+      "requirements": {
+        "if_switch_on_seat": "≥50mm",
+        "if_switch_elsewhere": "≥20mm"
+      }
+    },
+    {
+      "id": "C02",
+      "title": "BP 2: Interfaz Trim/Side Closures - Trim Foot",
+      "content": "Describe la interfaz del borde perimetral del Panel de Puerta ('Trim Foot') con el interior de la puerta ('N-Plane') y su transición alrededor de los bordes trasero, inferior y frontal. Incluye criterios para la interfaz con el adorno de la ventana (window garnish trim).",
+      "keywords": ["trim foot", "N-plane", "interfaz", "sellado", "ajuste fit", "tolerancias"],
+      "category": "Requisitos Dimensionales (Interfaces)",
+      "priority": "Alta",
+      "consequence": "Problemas de calidad percibida, problemas de garantía y ajustes pobres al metal/sellado",
+      "requirements": {
+        "zone_1": "0mm",
+        "transition_zone": "1.5mm",
+        "zone_2": "3mm"
+      }
+    },
+    {
+      "id": "C03",
+      "title": "BP 3: Interfaz Tirador de Puerta a Chapa Metálica",
+      "content": "Establece los criterios de diseño para la interfaz entre el tirador del panel de puerta y la chapa metálica. Aplica a todos los programas con tiradores (no aplica a tazas).",
+      "keywords": ["tirador", "pull handle", "chapa metálica", "fijación M4.2", "torque", "compatibilidad global"],
+      "category": "Requisitos Mecánicos (Anclaje)",
+      "priority": "Alta",
+      "consequence": "Afecta la compatibilidad global de la solución de fabricación en plantas de ensamblaje",
+      "requirements": {
+        "fasteners": "≥2 × M4.2",
+        "torque": "5 ± 0.5 Nm",
+        "spacing_min": "20mm",
+        "spacing_max": "30mm"
+      },
+      "applicability": "Programas con Pull Handle (no aplica a Pull Cup)"
+    },
+    {
+      "id": "C04",
+      "title": "BP 4: Interfaz Taza de Puerta a Chapa Metálica",
+      "content": "Describe los criterios de diseño para la interfaz entre la taza de puerta (pull cup) y la chapa metálica. Aplica a programas con tazas (no aplica a tiradores).",
+      "keywords": ["taza", "pull cup", "chapa metálica", "fijación M4.2", "torque", "compatibilidad global"],
+      "category": "Requisitos Mecánicos (Anclaje)",
+      "priority": "Alta",
+      "consequence": "Afecta la compatibilidad global de la solución de fabricación en plantas de ensamblaje",
+      "requirements": {
+        "fasteners": "1 × M4.2",
+        "torque": "5 ± 0.5 Nm"
+      },
+      "applicability": "Programas con Pull Cup (no aplica a Pull Handle)"
+    },
+    {
+      "id": "C05",
+      "title": "BP 5: Requisitos de Interfaz Cinturón de Seguridad a Panel de Puerta",
+      "content": "Revisión del cumplimiento de los requisitos de espacio libre en la interfaz entre el panel de puerta y el mecanismo de cierre del cinturón de seguridad para todas las posiciones de asiento. Mínimo 30mm de claro entre la hebilla/lengüeta del cinturón y el panel de puerta, independientemente de la posición o viaje del asiento. Se requiere detalle especial para Coupes y Convertibles.",
+      "keywords": ["cinturón de seguridad", "clearance", "hebilla", "panel de puerta", "coupe", "convertible"],
+      "category": "Requisitos de Seguridad y Espacio Libre",
+      "priority": "Crítica",
+      "consequence": "El cinturón puede causar daño al revestimiento interior",
+      "requirements": {
+        "clearance_min": "≥30mm",
+        "applies_to_all_seat_positions": true,
+        "special_attention": ["Coupe", "Convertible"]
+      }
+    },
+    {
+      "id": "C06",
+      "title": "BP 6: Ubicación de Etiqueta del Panel de Puerta",
+      "content": "Define los criterios para la ubicación de una etiqueta o marca identificativa en el producto. Debe estar en un área lo suficientemente plana para adherirse correctamente. Se recomienda una línea de grabado (scribe line) de 0.5mm como guía. Tamaño típico: 20mm × 50mm.",
+      "keywords": ["etiqueta", "adhesión", "scribe line", "dimensiones", "escaneo"],
+      "category": "Requisitos de Identificación/Marcado",
+      "priority": "Media",
+      "consequence": "La operación de escaneo de etiquetas no es aceptable por la planta GM",
+      "requirements": {
+        "location_constraint": "Área plana del producto",
+        "scribe_line_depth": "0.5mm",
+        "typical_size_width": "20mm",
+        "typical_size_height": "50mm",
+        "constraint_for_plant": "Debe permitir escaneo automático"
+      }
+    },
+    {
+      "id": "C07",
+      "title": "BP 7: Estrategia de Cinta Protectora",
+      "content": "Proporciona requisitos para la aplicación y validación de cinta protectora para mitigar daños estéticos durante el manejo y transporte (ej. pelado de pintura, arañazos).",
+      "keywords": ["cinta protectora", "transporte", "daños estéticos", "rack", "export", "teamcenter"],
+      "category": "Requisitos de Empaque y Logística",
+      "priority": "Media",
+      "consequence": "Daño al panel de puerta antes del ensamblaje o durante el envío",
+      "requirements": {
+        "rack_transport": {
+          "width": "10mm",
+          "height": "10mm",
+          "teamcenter_ref": "BDY23000",
+          "coverage": "Esquinas expuestas sin impedir instalación"
+        },
+        "export_vehicle": {
+          "lower_zone": {"width": "8mm", "height": "10mm"},
+          "upper_and_armrest": {"width": "30mm", "height": "10mm"}
+        }
+      }
+    }
+  ]
+}

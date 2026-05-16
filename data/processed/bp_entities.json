@@ -1,0 +1,182 @@
+{
+  "metadata": {
+    "source": "26A Best Practices_Modified.docx",
+    "extraction_date": "2025-05-25",
+    "total_entities": 23
+  },
+  "entity_types": {
+    "components": [
+      {
+        "name": "Panel de Puerta",
+        "alias": ["Door Trim", "Door Panel"],
+        "description": "Componente interior de la puerta del vehículo",
+        "category": "Componente Principal",
+        "related_bps": ["BP1", "BP2", "BP5", "BP6", "BP7"]
+      },
+      {
+        "name": "Compartimentos Primarios",
+        "alias": ["Map Pockets", "Almacenamiento"],
+        "description": "Espacios de almacenamiento en el panel de puerta",
+        "category": "Sub-componente",
+        "related_bps": ["BP1"]
+      },
+      {
+        "name": "Trim Foot",
+        "alias": ["Borde Perimetral"],
+        "description": "Borde perimetral del panel de puerta",
+        "category": "Sub-componente",
+        "related_bps": ["BP2"]
+      },
+      {
+        "name": "N-Plane",
+        "alias": ["Interior Door", "Interior Puerta"],
+        "description": "Superficie interior de la puerta metálica",
+        "category": "Componente",
+        "related_bps": ["BP2"]
+      },
+      {
+        "name": "Window Garnish Trim",
+        "alias": ["Adorno Ventana", "Ventana Guarnición"],
+        "description": "Adorno decorativo alrededor de la ventana",
+        "category": "Sub-componente",
+        "related_bps": ["BP2"]
+      },
+      {
+        "name": "Tirador de Puerta",
+        "alias": ["Pull Handle"],
+        "description": "Manija para abrir la puerta",
+        "category": "Componente",
+        "related_bps": ["BP3"],
+        "mutually_exclusive_with": "Taza de Puerta"
+      },
+      {
+        "name": "Taza de Puerta",
+        "alias": ["Pull Cup"],
+        "description": "Taza de agarre para abrir la puerta",
+        "category": "Componente",
+        "related_bps": ["BP4"],
+        "mutually_exclusive_with": "Tirador de Puerta"
+      },
+      {
+        "name": "Chapa Metálica",
+        "alias": ["Sheet Metal", "Metal Base"],
+        "description": "Estructura metálica base de la puerta",
+        "category": "Componente",
+        "related_bps": ["BP3", "BP4"]
+      },
+      {
+        "name": "Hebilla de Cinturón",
+        "alias": ["Seat Belt Buckle", "Lengüeta Cinturón"],
+        "description": "Mecanismo de cierre del cinturón de seguridad",
+        "category": "Componente",
+        "related_bps": ["BP5"]
+      },
+      {
+        "name": "Asientos",
+        "alias": ["Seat Assembly"],
+        "description": "Sistema de asientos del vehículo",
+        "category": "Componente",
+        "related_bps": ["BP1", "BP5"]
+      },
+      {
+        "name": "Etiqueta",
+        "alias": ["Label", "Tag", "Marca"],
+        "description": "Etiqueta identificativa en el producto",
+        "category": "Sub-componente",
+        "related_bps": ["BP6"]
+      },
+      {
+        "name": "Cinta Protectora",
+        "alias": ["Protective Tape", "Cinta Protección"],
+        "description": "Material de protección durante transporte",
+        "category": "Material",
+        "related_bps": ["BP7"]
+      }
+    ],
+    "technical_concepts": [
+      {
+        "name": "KPAC",
+        "alias": ["Knowledge Process Area Control"],
+        "description": "Marco de control de procesos",
+        "category": "Concepto Técnico"
+      },
+      {
+        "name": "Torque",
+        "alias": ["Torque de Apriete"],
+        "description": "Fuerza de torsión para fijaciones",
+        "category": "Parámetro",
+        "related_bps": ["BP3", "BP4"]
+      },
+      {
+        "name": "Scribe Line",
+        "alias": ["Línea de Grabado"],
+        "description": "Línea de referencia grabada en el producto",
+        "category": "Técnica",
+        "related_bps": ["BP6"]
+      },
+      {
+        "name": "M4.2 Fastener",
+        "alias": ["Fijación M4.2"],
+        "description": "Tornillo estándar de 4.2mm",
+        "category": "Especificación Técnica",
+        "related_bps": ["BP3", "BP4"]
+      },
+      {
+        "name": "Clearance",
+        "alias": ["Espacio Libre", "Claro"],
+        "description": "Espacio mínimo requerido entre componentes",
+        "category": "Parámetro",
+        "related_bps": ["BP1", "BP5"]
+      },
+      {
+        "name": "Teamcenter BDY23000",
+        "alias": ["Referencia Teamcenter"],
+        "description": "Código de referencia en sistema PLM Teamcenter",
+        "category": "Sistema Informático",
+        "related_bps": ["BP7"]
+      },
+      {
+        "name": "Rack Transportation",
+        "alias": ["Transporte en Rack"],
+        "description": "Método de transporte en estructuras de rack",
+        "category": "Logística",
+        "related_bps": ["BP7"]
+      },
+      {
+        "name": "Export Vehicle",
+        "alias": ["Vehículo para Exportación"],
+        "description": "Vehículo destinado a exportación",
+        "category": "Logística",
+        "related_bps": ["BP7"]
+      }
+    ],
+    "vehicle_segments": [
+      {
+        "name": "Coupe",
+        "description": "Segmento de vehículo tipo coupé",
+        "related_bps": ["BP5"],
+        "note": "Requiere atención especial para cinturón de seguridad"
+      },
+      {
+        "name": "Convertible",
+        "description": "Segmento de vehículo convertible",
+        "related_bps": ["BP5"],
+        "note": "Requiere atención especial para cinturón de seguridad"
+      }
+    ],
+    "organizations": [
+      {
+        "name": "General Motors (GM)",
+        "alias": ["GM"],
+        "role": "Propietario de la especificación",
+        "classification": "Cliente"
+      },
+      {
+        "name": "UEAMex",
+        "alias": ["UAEM"],
+        "role": "Institución colaboradora",
+        "classification": "Partner"
+      }
+    ]
+  }
+}
